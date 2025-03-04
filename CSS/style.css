@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    background-color: brown;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* makes it easier if you're going to hide content later*/
+    padding: 0 1.5rem;
+}
+
+button{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+button:hover{
+    color: black;
+    border: 1px solid black;
+    border-radius: 0.25rem;
+}
+
+nav{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li{
+    list-style-type: none;
+    display: inline; 
+    margin-right: 2rem;
+    /* inline block cannot have magin and padding, and staright up inline cannot have margin or padding on the TOP or BOTTOM*/
+}
+
+nav li:last-of-type{ 
+    /* only targets the very last item in the specified selector. There is also first-of-type*/
+    margin-right: 0;
+}
+
+nav li a{
+    text-decoration: none;
+    color: white;
+}
+
+nav li a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+@media screen and (max-width:750px){
+
+button{
+    display: block;
+}
+
+nav{
+    position: absolute; /* will always move to the top left by default*/
+    top: 100%; /* moves to the absolute bottom of parent container*/
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: brown;
+    flex-direction: column;
+    display: none;
+}
+
+nav.active{
+    display: block;
+}
+
+nav li{
+    display: block; /* reset the thing the same way that you didit the first time*/
+    text-align: center;
+    margin-right: 2;
+}
+
+nav li a{
+    padding: 2rem;
+    display: block;
+}
+
+nav li:last-of-type{
+    margin-right: 2rem;
+}
+
+}
